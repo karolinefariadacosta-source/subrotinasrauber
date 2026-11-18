@@ -1,0 +1,38 @@
+
+import java.util.Scanner;
+
+public class exercicio7 {
+
+    // Sub-rotina que verifica se o número é primo
+    public static boolean primo(int numero) {
+
+        if (numero <= 1) {
+            return false;
+        }
+
+        for (int i = 2; i < numero; i++) {
+            if (numero % i == 0) {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+    public static void main(String[] args) {
+
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Digite um número: ");
+        int num = scanner.nextInt();
+
+        if (primo(num)) {
+            System.out.println("Primo");
+        } else {
+            System.out.println("Não primo");
+        }
+
+       
+    }
+}
+
