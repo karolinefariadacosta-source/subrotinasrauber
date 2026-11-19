@@ -1,0 +1,21 @@
+import java.util.Scanner;
+
+
+public class ex0202  {
+
+    static void mostrarNumeros(int numero) {
+
+        if (numero > 100) {
+            return;
+        }
+
+        System.out.println(numero);
+
+        mostrarNumeros(numero + 1);
+    }
+
+    public static void main(String[] args) {
+
+        mostrarNumeros(0);
+    }
+}
