@@ -1,0 +1,29 @@
+import java.util.Scanner;
+
+public class ex0502 {
+
+    static double somar(double[] vetor, int posicao) {
+
+        if (posicao == vetor.length) {
+            return 0;
+        }
+
+        return vetor[posicao] + somar(vetor, posicao + 1);
+    }
+
+    static double calcularMedia(double[] vetor) {
+
+        return somar(vetor, 0) / vetor.length;
+    }
+
+    public static void main(String[] args) {
+
+        Scanner entrada = new Scanner(System.in);
+
+        double[] numeros = {7.5, 8.0, 9.5, 6.0};
+
+        System.out.println("Media: " + calcularMedia(numeros));
+
+        entrada.close();
+    }
+}
