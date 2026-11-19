@@ -1,0 +1,33 @@
+
+import Java.util.Scanner;
+
+public class ex0102{
+
+    static boolean ehPrimo(int numero, int divisor) {
+
+        if (numero < 2) {
+            return false;
+        }
+
+        if (divisor > numero / divisor) {
+            return true;
+        }
+
+        if (numero % divisor == 0) {
+            return false;
+        }
+
+        return ehPrimo(numero, divisor + 1);
+    }
+
+    public static void main(String[] args) {
+
+        int numero = 17;
+
+        if (ehPrimo(numero, 2)) {
+            System.out.println("É primo");
+        } else {
+            System.out.println("Não é primo");
+        }
+    }
+}
