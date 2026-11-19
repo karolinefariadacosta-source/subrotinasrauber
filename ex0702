@@ -1,0 +1,32 @@
+import java.util.Scanner;
+import java.util.Arrays;
+
+public class ex0702 {
+
+    static void inverter(int[] vetor, int inicio, int fim) {
+
+        if (inicio >= fim) {
+            return;
+        }
+
+        int auxiliar = vetor[inicio];
+
+        vetor[inicio] = vetor[fim];
+        vetor[fim] = auxiliar;
+
+        inverter(vetor, inicio + 1, fim - 1);
+    }
+
+    public static void main(String[] args) {
+
+        Scanner entrada = new Scanner(System.in);
+
+        int[] numeros = {1, 2, 3, 4};
+
+        inverter(numeros, 0, numeros.length - 1);
+
+        System.out.println(Arrays.toString(numeros));
+
+        entrada.close();
+    }
+}
