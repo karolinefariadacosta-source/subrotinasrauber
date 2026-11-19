@@ -1,0 +1,54 @@
+import java.util.Scanner;
+import java.util.Arrays;
+
+public class ex0802 {
+
+    static boolean existe(int[] vetor, int numero, int posicao) {
+
+        if (posicao == vetor.length) {
+            return false;
+        }
+
+        if (vetor[posicao] == numero) {
+            return true;
+        }
+
+        return existe(vetor, numero, posicao + 1);
+    }
+
+    static int contar(int[] vetor, int posicao, int[] resultado, int quantidade) {
+
+        if (posicao == vetor.length) {
+            return quantidade;
+        }
+
+        if (!existe(resultado, vetor[posicao], 0)) {
+            resultado[quantidade] = vetor[posicao];
+            quantidade++;
+        }
+
+        return contar(vetor, posicao + 1, resultado, quantidade);
+    }
+
+    static int[] eliminar(int[] vetor) {
+
+        int[] resultado = new int[vetor.length];
+
+        int quantidade = contar(vetor, 0, resultado, 0);
+
+        return Arrays.copyOf(resultado, quantidade);
+    }
+
+    public static void main(String[] args) {
+
+        Scanner entrada = new Scanner(System.in);
+
+        int[] numeros = {1, 2, 2, 3, 4, 4, 5};
+
+        int[] resultado = eliminar(numeros);
+
+        System.out.println(Arrays.toString(resultado));
+
+        entrada.close();
+    }
+}
