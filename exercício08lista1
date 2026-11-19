@@ -1,0 +1,60 @@
+
+import java.util.Scanner;
+
+public class Exercicio8 {
+
+    public static void maiorMenor(int a, int b, int c, int d, int e) {
+
+        int maior = a;
+        int menor = a;
+
+        if (b > maior) {
+            maior = b;
+        }
+
+        if (c > maior) {
+            maior = c;
+        }
+
+        if (d > maior) {
+            maior = d;
+        }
+
+        if (e > maior) {
+            maior = e;
+        }
+
+        if (b < menor) {
+            menor = b;
+        }
+
+        if (c < menor) {
+            menor = c;
+        }
+
+        if (d < menor) {
+            menor = d;
+        }
+
+        if (e < menor) {
+            menor = e;
+        }
+
+        System.out.println("Maior: " + maior);
+        System.out.println("Menor: " + menor);
+    }
+
+    public static void main(String[] args) {
+        Scanner entrada = new Scanner(System.in);
+
+        System.out.print("Digite cinco numeros: ");
+
+        int a = entrada.nextInt();
+        int b = entrada.nextInt();
+        int c = entrada.nextInt();
+        int d = entrada.nextInt();
+        int e = entrada.nextInt();
+
+        maiorMenor(a, b, c, d, e);
+    }
+}
