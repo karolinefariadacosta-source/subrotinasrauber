@@ -1,7 +1,7 @@
 
 import java.util.Scanner;
 
-public class Exercicio9 {
+public class exercício9lista1 {
 
     public static String abreviarNome(String nome) {
 
