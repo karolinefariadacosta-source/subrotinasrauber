@@ -1,0 +1,31 @@
+import java.util.Scanner;
+
+public class ex0602 {
+
+    static boolean procurar(int[] vetor, int numero, int posicao) {
+
+        if (posicao == vetor.length) {
+            return false;
+        }
+
+        if (vetor[posicao] == numero) {
+            return true;
+        }
+
+        return procurar(vetor, numero, posicao + 1);
+    }
+
+    public static void main(String[] args) {
+
+        Scanner entrada = new Scanner(System.in);
+
+        int[] numeros = {2, 5, 8, 10, 15};
+
+        System.out.print("Digite um numero: ");
+        int numero = entrada.nextInt();
+
+        System.out.println(procurar(numeros, numero, 0));
+
+        entrada.close();
+    }
+}
